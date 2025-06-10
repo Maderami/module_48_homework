@@ -9,6 +9,10 @@ class PassengerVehicle extends Vehicle implements NitrousOxideSystem
         return 'Автомабиль - ' . $this->getNameVehicle() . ' движеться вперед со скростью' . $this->getMaxSpeedVehicle() . 'км/ч' . PHP_EOL;
 
     }
+    public function showCustomizationVehicle()
+    {
+        return $this->customization;
+    }
 
     public function getTypeActionVehicle()
     {

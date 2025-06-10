@@ -19,6 +19,10 @@ class Bulldozer extends Vehicle implements BucketControllable
         return $this->typeActionVehicle;
     }
 
+    public function showCustomizationVehicle()
+    {
+        return $this->customization;
+    }
     public function controlBucket()
     {
         return $this->getNameVehicle() . " размахивает ковшом\n";
