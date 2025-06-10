@@ -4,16 +4,6 @@ namespace Src\MachineClasses;
 
 class Bulldozer extends Vehicle implements BucketControllable
 {
-    public function getNameVehicle()
-    {
-        return $this->nameVehicle;
-    }
-
-    public function getMaxSpeedVehicle()
-    {
-        return $this->maxSpeedVehicle;
-    }
-
     public function getTypeActionVehicle()
     {
         return $this->typeActionVehicle;
@@ -23,10 +13,6 @@ class Bulldozer extends Vehicle implements BucketControllable
     {
         return $this->customization;
     }
-    public function controlBucket()
-    {
-        return $this->getNameVehicle() . " размахивает ковшом\n";
-    }
 
     public function useSpecialAbility($typeActionVehicle)
     {
@@ -35,17 +21,35 @@ class Bulldozer extends Vehicle implements BucketControllable
                 return $this->controlBucket();
         }
     }
-    public function honk() {
+
+    public function controlBucket()
+    {
+        return $this->getNameVehicle() . " размахивает ковшом\n";
+    }
+
+    public function getNameVehicle()
+    {
+        return $this->nameVehicle;
+    }
+
+    public function honk()
+    {
         echo $this->getNameVehicle() . " сигналит: Би-бип!\n";
     }
 
-    public function turnOnWipers() {
+    public function turnOnWipers()
+    {
         echo $this->getNameVehicle() . " включает дворники\n";
     }
 
     public function moveForward()
     {
         return 'Бульдозер - ' . $this->getNameVehicle() . ' движеться вперед со скростью' . $this->getMaxSpeedVehicle() . 'км/ч' . PHP_EOL;
+    }
+
+    public function getMaxSpeedVehicle()
+    {
+        return $this->maxSpeedVehicle;
     }
 
     public function moveBackward()
