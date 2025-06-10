@@ -12,7 +12,10 @@ class Tank extends Vehicle
     {
         return $this->maxSpeedVehicle;
     }
-
+    public function showCustomizationVehicle()
+    {
+        return $this->customization;
+    }
     public function getTypeActionVehicle()
     {
         return $this->typeActionVehicle;

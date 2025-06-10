@@ -13,11 +13,14 @@ abstract class Vehicle
     protected $maxSpeedVehicle;
     protected $typeActionVehicle;
 
-    public function __construct(string $name, int $maxSpeed, string $typeActionVehicle)
+    protected $customization;
+
+    public function __construct(string $name, int $maxSpeed, string $typeActionVehicle, Customization $customization)
     {
         $this->nameVehicle = $name;
         $this->maxSpeedVehicle = $maxSpeed;
         $this->typeActionVehicle = $typeActionVehicle;
+        $this->customization = $customization;
     }
 
     public static function getVehicleObject(string $className)
@@ -29,7 +32,7 @@ abstract class Vehicle
             return null;
         }
     }
-
+    abstract public function showCustomizationVehicle();
     abstract function getNameVehicle();
 
     abstract function getMaxSpeedVehicle();
